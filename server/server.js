@@ -1,20 +1,20 @@
 const app = require("./app");
-const dotenv = require("dotenv");
 const cloudinary = require("cloudinary");
 const connectDatabase = require("./config/database");
 
 // Handling Uncaught Exception
 process.on("uncaughtException", (err) => {
   console.log(`Error: ${err.message}`);
-  console.log("Shutting down the server due to Uncaught Exception");
-
+  console.log(`Shutting down the server due to Uncaught Exception`);
   process.exit(1);
 });
 
-// config
-dotenv.config({ path: "./config/config.env" });
+// Config
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({ path: "server/config/config.env" });
+}
 
-// connect to database..
+// Connecting to database
 connectDatabase();
 
 cloudinary.config({
@@ -23,9 +23,8 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const port = process.env.PORT || 5000;
-const server = app.listen(port, () => {
-  console.log(`Server is working on http://localhost:${port}`);
+const server = app.listen(process.env.PORT, () => {
+  console.log(`Server is working on http://localhost:${process.env.PORT}`);
 });
 
 // Unhandled Promise Rejection

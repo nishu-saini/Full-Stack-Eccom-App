@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Products.css";
+import "./Product.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProduct } from "../../actions/productAction";
 import Loader from "../layout/Loader/Loader";
