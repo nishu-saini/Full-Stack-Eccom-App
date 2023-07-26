@@ -20,7 +20,7 @@ Following APIs have been created to handle various frontend requests:
 
 - **Payment API**: It facilitates making payments using `Stripe`.
 
-## API Enpoints
+## API Endpoints
 
 ### GET Method
 
