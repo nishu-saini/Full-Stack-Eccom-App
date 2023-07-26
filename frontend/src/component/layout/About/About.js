@@ -14,7 +14,7 @@ const About = () => {
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://"
+              src="https://res.cloudinary.com/du72wrt1f/image/upload/v1690368868/avatars/passport_photo_pq66vi.jpg"
               alt="Founder"
             />
             <Typography>Nishu Saini</Typography>
